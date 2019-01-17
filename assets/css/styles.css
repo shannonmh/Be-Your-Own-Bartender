@@ -1,5 +1,17 @@
-#header{
+body{
+    overflow-x: hidden;
+}
+
+.container{
+    width: 90%;
+}
+
+.header{
     margin: 0 auto;
+}
+
+h1{
+    line-height: 0.9;
 }
 
 .nav-wrapper{
@@ -8,10 +20,48 @@
 
 .searchBox{
     margin: 0 auto;
-    margin-top: 100px;
-    width: 80%;
+    width: 100%;
 }
 
-/* #search{
+#name-search{
+     padding-bottom: 0;
+     padding-left: 12px;
+}
 
-} */
+#ingredient-search{
+     padding-left: 12px;
+}
+
+.section{
+    padding: 0;
+    margin-top: 50px;
+    margin-bottom: 0;
+}
+
+#drink{
+    margin-top: 0;
+}
+
+#ingredient{
+    padding: 0;
+    margin-top: 100px;
+    margin-bottom: 0;
+}
+
+#recent{
+    margin-top: 100px;
+}
+
+.nav-wrapper{
+    width: 100% !important;
+}
+
+.btn{
+    margin-top: 10px;
+}
+
+@media only screen and (min-width: 993px){
+    #header-logo{
+        position: relative;
+    }
+}
