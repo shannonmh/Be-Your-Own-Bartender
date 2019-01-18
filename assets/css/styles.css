@@ -1,9 +1,18 @@
+@font-face {
+    font-family: "ChunkFive Roman";
+    src: url(../ChunkFive/Chunkfive.otf)
+}
+
 body{
     overflow-x: hidden;
 }
 
 .container{
     width: 90%;
+}
+
+.brand-logo{
+    font-family: "Chunkfive Roman";
 }
 
 .header{
@@ -13,6 +22,7 @@ body{
 h1{
     line-height: 0.9;
     font-size: 3em;
+    font-family: "ChunkFive Roman";
 }
 
 .nav-wrapper{
