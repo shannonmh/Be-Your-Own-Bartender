@@ -1,33 +1,33 @@
-document.addEventListener('DOMContentLoaded', function() {
-    var elems = document.querySelectorAll('.sidenav');
-    var instances = M.Sidenav.init(elems, options);
-  });
-
   $(document).ready(function() {
 
-    // Initialize Firebase
-    var config = {
-      apiKey: "AIzaSyBh8at-MlvXDNVsDXyjSRu6Hl7423HYbe0",
-      authDomain: "bartender-4c74e.firebaseapp.com",
-      databaseURL: "https://bartender-4c74e.firebaseio.com",
-      projectId: "bartender-4c74e",
-      storageBucket: "",
-      messagingSenderId: "569675945586"
-    };
-    firebase.initializeApp(config);
+    // // Initialize Firebase
+    // var config = {
+    //   apiKey: "AIzaSyBh8at-MlvXDNVsDXyjSRu6Hl7423HYbe0",
+    //   authDomain: "bartender-4c74e.firebaseapp.com",
+    //   databaseURL: "https://bartender-4c74e.firebaseio.com",
+    //   projectId: "bartender-4c74e",
+    //   storageBucket: "",
+    //   messagingSenderId: "569675945586"
+    // };
+    // firebase.initializeApp(config);
   
-    var database = firebase.database();
+    // var database = firebase.database();
   
-  $("#drink-search").on("click", function(event) {
+  $("#name-button").on("click", function(event) {
       event.preventDefault();
+
+      $(".searchBox").hide();
+      $("h5").hide();
   
-      var userDrink = $("#name-search").val().trim();
+      var userDrink = $("#name-search").val();
       var queryDrinkURL = "https://www.thecocktaildb.com/api/json/v1/1/search.php?s=" + userDrink;
   
       $.ajax({
           url: queryDrinkURL,
           method: "GET"
       }).then(function(response) {
+
+        console.log(response.drinks[0].strDrink);
           var drinkReturn = response.drinks[0].strDrink;
           var drinkInstructions = response.drinks[0].strInstructions;
           var image = $("<img>");
@@ -41,31 +41,34 @@ document.addEventListener('DOMContentLoaded', function() {
               }
           }
   
-          $("#name-div").append("Drink Name: " + drinkReturn);
+          $("#drink").append("Drink Name: " + drinkReturn);
   
-          $("#picture-div").append(image);
+          $("#drink").append(image);
   
-          $("#ingredients-div").text("Ingredients: ");
+          $("#ingredient").text("Ingredients: ");
   
           for (var i = 0; i < ingredients.length; i++) {
-              $("#ingredients-div").append(ingredients[i] + ", ");
+              $("#ingredient").append(ingredients[i] + ", ");
           }
   
-          $("#instructions-div").append("Instructions: " + drinkInstructions);
+          $("#ingredient").append("<br>" + "Instructions: " + drinkInstructions);
   
-          database.ref().push({
-              name: drinkReturn,
-              photo: image,
-              ingredients: ingredients,
-              instructions: drinkInstructions
-          });
+        //   database.ref().push({
+        //       name: drinkReturn,
+        //       photo: image,
+        //       ingredients: ingredients,
+        //       instructions: drinkInstructions
+        //   });
       });
   });
   
-  $("#ingredient-search").on("click", function(event) {
+  $("#ingredient-button").on("click", function(event) {
       event.preventDefault();
+
+      $(".searchBox").hide();
+      $("h5").hide();
   
-      var userIngredient= $("#user-input-two").val().trim();
+      var userIngredient= $("#ingredient-search").val().trim();
       var queryIngredientURL = "https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=" + userIngredient;
   
       $.ajax({
@@ -93,24 +96,24 @@ document.addEventListener('DOMContentLoaded', function() {
                   }
               }
   
-          $("#name-div").append("Drink Name: " + ingredientReturn);
+          $("#drink").append("Drink Name: " + ingredientReturn);
   
-          $("#picture-div").append(imageTwo);
+          $("#drink").append(imageTwo);
   
-          $("#ingredients-div").text("Ingredients: ");
+          $("#ingredient").text("Ingredients: ");
   
           for (var i = 0; i < ingredientsTwo.length; i++) {
               $("#ingredients-div").append(ingredientsTwo[i] + ", ");
           }
   
-          $("#instructions-div").append("Instructions: " + ingredientInstructions);
+          $("#ingredient").append("<br>" + "Instructions: " + ingredientInstructions);
   
-          database.ref().push({
-              name: ingredientReturn,
-              photo: imageTwo,
-              ingredients: ingredientIngredients,
-              instructions: ingredientInstructions
-          });
+        //   database.ref().push({
+        //       name: ingredientReturn,
+        //       photo: imageTwo,
+        //       ingredients: ingredientIngredients,
+        //       instructions: ingredientInstructions
+        //   });
   
       });
   });
