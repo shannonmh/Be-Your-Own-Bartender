@@ -1,100 +1,107 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8" />
-        <title>BYOB (Be Your Own Bartender)</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-        <link rel="stylesheet" type="text/css" media="screen" href="assets/css/styles.css" />
 
-        <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>        
-        <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> -->
-        <!-- <script src="https://www.gstatic.com/firebasejs/5.7.3/firebase.js"></script> -->
-        <script src="assets/js/app.js"></script>
-    </head>
+<head>
+    <meta charset="utf-8" />
+    <title>BYOB (Be Your Own Bartender)</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" media="screen" href="assets/css/styles.css" />
 
-    <body>
-        <nav class="col s12 m6 l3" id="header">
-            <div class="nav-wrapper">
-                <a href="#" class="brand-logo" id="header-logo">BYOB</a>
-            <div class="nav-wrapper" id="header-logo">
-                <!-- <img src="assets/images/icon_bb copy.png" alt="icon logo" id="header-logo"> -->
-            </div>
-        </nav>
-    
-        <div class="container">
-            <div class="row header">
-                <header class="col s12 m12 l12 flow-text center-align">
-                    <h1>Be Your Own Bartender</h1>
-                </header>
-            </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+        crossorigin="anonymous"></script>
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> -->
+    <!-- <script src="https://www.gstatic.com/firebasejs/5.7.3/firebase.js"></script> -->
+    <script src="assets/js/app.js"></script>
+</head>
 
+<body>
+    <nav class="col s12 m6 l3" id="header">
+        <div class="nav-wrapper cyan lighten-3" id="header-logo">
+            <!-- <img src="assets/images/icon_bb copy.png" alt="icon logo" id="header-logo"> -->
+        </div>
+    </nav>
 
-
-            <div class="row section" id="drink">
-                <div class="col s12 m12 l3 flow-text left-align">
-                    <h5>Drink Name</h4>
-                </div>
-            </div>
-
-            <nav class="searchBox">
-                <div class="nav-wrapper">
-                    <form id="drinkForm" class="searchInput">
-                        
-                        <div class="input-field">
-                            <input id="name-search" type="search" required placeholder="Enter Drink">
-                            <label class="label-icon" for="search"></label>
-                            <i class="material-icons">close</i>
-                        </div>
-                        
-                        <button class="btn-large waves-effect waves-light btn" type="submit" name="action" id="name-button">Search
-                            <i class="material-icons right">search</i>
-                        </button>
-                    </form>
-                </div>
-            </nav>
+    <div class="container">
+        <div class="row header">
+            <header class="col s12 m12 l12 flow-text center-align grey-text text-darken-2">
+                <h1>Be Your Own Bartender</h1>
+            </header>
+        </div>
 
 
-            <div class="row section" id="ingredient">
-                <div class="col s12 m12 l3 flow-text left-align">
-                    <h5>Drink Ingredient</h4>
-                </div>
-            </div>
 
-            <nav class="searchBox">
-                <div class="nav-wrapper">
-                    <form id="ingredientForm" class="searchInput">
-                        
-                        <div class="input-field">
-                            <input id="ingredient-search" type="search" required placeholder="Enter Ingredient">
-                            <label class="label-icon" for="search"></label>
-                            <i class="material-icons">close</i>
-                        </div>
-
-                        <button class="btn-large waves-effect waves-light btn" type="submit" name="action" id="ingredient-button">Search
-                            <i class="material-icons right">search</i>
-                        </button>
-                    </form>
-                </div>
-            </nav>
-
-
-            <!-- <div class="divider"></div> -->
-
-            <div class="row section" id="recent">
-
-                <div class="col s4" id="recent-drink-display-one">
-                <!-- Recent drink 1 goes here -->
-                </div>
-                <div class="col s4" id="recent-drink-display-two">
-                <!-- Recent drink 2 goes here -->
-                </div>
-                <div class="col s4" id="recent-drink-display-two">
-                <!-- Recent drink 3 goes here -->
-                </div>
-        
+        <div class="row section center-align" id="drink">
+            <div class="col s12 m12 l3 flow-text left-align grey-text text-darken-2">
+                <h5>Drink Name</h4>
             </div>
         </div>
-    </body>
+
+        <nav class="searchBox">
+            <div class="nav-wrapper">
+                <form id="drinkForm" class="searchInput">
+
+                    <div class="input-field amber lighten-3">
+                        <input id="name-search" type="search" required placeholder="Enter Drink">
+                        <label class="label-icon" for="search"></label>
+                        <i class="material-icons">close</i>
+                    </div>
+
+                    <button class="btn-large waves-effect waves-light btn cyan lighten-3" type="submit" name="action"
+                        id="name-button">Search
+                        <i class="material-icons right">search</i>
+                    </button>
+                </form>
+            </div>
+        </nav>
+
+
+
+        <div class="row section center-align" id="ingredient">
+            <div class="col s12 m12 l3 flow-text left-align grey-text text-darken-2">
+                <h5>Drink Ingredient</h4>
+            </div>
+        </div>
+
+        <nav class="searchBox">
+            <div class="nav-wrapper">
+                <form id="ingredientForm" class="searchInput">
+
+                    <div class="input-field amber lighten-3">
+                        <input id="ingredient-search" type="search" required placeholder="Enter Ingredient">
+                        <label class="label-icon" for="search"></label>
+                        <i class="material-icons">close</i>
+                    </div>
+
+                    <button class="btn-large waves-effect waves-light btn cyan lighten-3" type="submit" name="action"
+                        id="ingredient-button">Search
+                        <i class="material-icons right">search</i>
+                    </button>
+                </form>
+            </div>
+        </nav>
+
+
+        <!-- <div class="divider"></div> -->
+
+        <div class="row section" id="recent">
+
+            <div class="col s4" id="recent-drink-display-one">
+                <!-- Recent drink 1 goes here -->
+            </div>
+            <div class="col s4" id="recent-drink-display-two">
+                <!-- Recent drink 2 goes here -->
+            </div>
+            <div class="col s4" id="recent-drink-display-two">
+                <!-- Recent drink 3 goes here -->
+            </div>
+
+        </div>
+        <div class="row center-align">
+            <a href="index.html" class="waves-effect waves-light btn-large cyan lighten-3"><i class="material-icons right">home</i>Return to Home</a>
+            </div>
+    </div>
+</body>
+
 </html>
