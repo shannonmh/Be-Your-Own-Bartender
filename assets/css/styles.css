@@ -11,13 +11,20 @@ body{
     width: 90%;
 }
 
+#header-logo{
+    background-image: url(../images/icon_bb\ copy.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100px;
+}
+
 .brand-logo{
     font-family: "Chunkfive Roman";
 }
 
-.header{
+/* .header{
     margin: 0 auto;
-}
+} */
 
 h1{
     line-height: 0.9;
@@ -74,5 +81,9 @@ h1{
 @media only screen and (min-width: 993px){
     #header-logo{
         position: relative;
+        background-image: url(../images/icon_bb\ copy.png);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 100px;
     }
 }
