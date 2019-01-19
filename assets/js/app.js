@@ -41,7 +41,7 @@
               }
           }
   
-          $("#drink").append("Drink Name: " + drinkReturn);
+          $("#drink").append("Drink Name: " + drinkReturn + "<br>");
   
           $("#drink").append(image);
   
@@ -96,14 +96,14 @@
                   }
               }
   
-          $("#drink").append("Drink Name: " + ingredientReturn);
+          $("#drink").append("Drink Name: " + ingredientReturn + "<br>");
   
           $("#drink").append(imageTwo);
   
           $("#ingredient").text("Ingredients: ");
   
           for (var i = 0; i < ingredientsTwo.length; i++) {
-              $("#ingredients-div").append(ingredientsTwo[i] + ", ");
+              $("#ingredient").append(ingredientsTwo[i] + ", ");
           }
   
           $("#ingredient").append("<br>" + "Instructions: " + ingredientInstructions);
