@@ -1,17 +1,17 @@
   $(document).ready(function() {
 
-    // // Initialize Firebase
-    // var config = {
-    //   apiKey: "AIzaSyBh8at-MlvXDNVsDXyjSRu6Hl7423HYbe0",
-    //   authDomain: "bartender-4c74e.firebaseapp.com",
-    //   databaseURL: "https://bartender-4c74e.firebaseio.com",
-    //   projectId: "bartender-4c74e",
-    //   storageBucket: "",
-    //   messagingSenderId: "569675945586"
-    // };
-    // firebase.initializeApp(config);
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyBh8at-MlvXDNVsDXyjSRu6Hl7423HYbe0",
+      authDomain: "bartender-4c74e.firebaseapp.com",
+      databaseURL: "https://bartender-4c74e.firebaseio.com",
+      projectId: "bartender-4c74e",
+      storageBucket: "",
+      messagingSenderId: "569675945586"
+    };
+    firebase.initializeApp(config);
   
-    // var database = firebase.database();
+    var database = firebase.database();
   
   $("#name-button").on("click", function(event) {
       event.preventDefault();
@@ -53,12 +53,21 @@
   
           $("#ingredient").append("<br>" + "Instructions: " + drinkInstructions);
   
-        //   database.ref().push({
-        //       name: drinkReturn,
-        //       photo: image,
-        //       ingredients: ingredients,
-        //       instructions: drinkInstructions
-        //   });
+          database.ref().push({
+              name: drinkReturn,
+              photo: image,
+              ingredients: ingredients,
+              instructions: drinkInstructions
+          });
+
+          database.ref().on("child_added", function(snapShot) {
+              console.log(snapShot.val().name);
+              console.log(snapShot.val().ingredients);
+              console.log(snapShot.val().ingredients);
+              console.log(snapShot.val().instructions);
+
+            //   $("#recent-drink-display-one").append(image);
+          })
       });
   });
   
@@ -108,13 +117,21 @@
   
           $("#ingredient").append("<br>" + "Instructions: " + ingredientInstructions);
   
-        //   database.ref().push({
-        //       name: ingredientReturn,
-        //       photo: imageTwo,
-        //       ingredients: ingredientIngredients,
-        //       instructions: ingredientInstructions
-        //   });
+          database.ref().push({
+              name: ingredientReturn,
+              photo: imageTwo,
+              ingredients: ingredientIngredients,
+              instructions: ingredientInstructions
+          });
   
+          database.ref().on("child_added", function(snapShot) {
+            console.log(snapShot.val().name);
+            console.log(snapShot.val().ingredients);
+            console.log(snapShot.val().ingredients);
+            console.log(snapShot.val().instructions);
+
+            // $("#recent-drink-display-one").append(image);
+          });
       });
   });
   
