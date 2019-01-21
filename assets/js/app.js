@@ -116,21 +116,18 @@ search();
         //   });
   
       });
+      
   });
   
   });
   
   function search() {
-    // clear results
     
-    //$("#results").html('')
-    //$("#buttons").html('')
-
     // Get For Input
     q = $("#name-search").val().trim();
-    qu =$("#ingredient-search").val().trim();
+   // qu =$("#ingredient-search").val().trim();
     // Run Get Request
-    $.ajax("https://www.googleapis.com/youtube/v3/search?part=snippet&q=" + q + qu + "&type=video&maxResults=1&key=AIzaSyBmBgUspUyuv5RHJj4nBnlOAC7F1Gn8w-M")
+    $.ajax("https://www.googleapis.com/youtube/v3/search?part=snippet&q=" + q + "&type=video&maxResults=1&key=AIzaSyBmBgUspUyuv5RHJj4nBnlOAC7F1Gn8w-M")
         .then(function (response) {
             console.log(response);
             var VideoPush = $("#youtube")
