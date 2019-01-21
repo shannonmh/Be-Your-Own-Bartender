@@ -60,14 +60,13 @@
               instructions: drinkInstructions
           });
 
-          database.ref().on("child_added", function(snapShot) {
+          database.ref().limitToLast(3).on("child_added", function(snapShot) {
               console.log(snapShot.val().name);
-              console.log(snapShot.val().ingredients);
               console.log(snapShot.val().ingredients);
               console.log(snapShot.val().instructions);
 
-            //   $("#recent-drink-display-one").append(image);
-          })
+              $("#recent-drink-display-one").append(snapShot.val().name + ", ");
+          });
       });
   });
   
@@ -124,17 +123,16 @@
               instructions: ingredientInstructions
           });
   
-          database.ref().on("child_added", function(snapShot) {
+          database.ref().limitToLast(3).on("child_added", function(snapShot) {
             console.log(snapShot.val().name);
-            console.log(snapShot.val().ingredients);
             console.log(snapShot.val().ingredients);
             console.log(snapShot.val().instructions);
 
-            // $("#recent-drink-display-one").append(image);
+            $("#recent-drink-display-one").append(snapShot.val().name + ", ");
           });
       });
   });
   
   });
-  
+
   });
