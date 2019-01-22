@@ -41,17 +41,17 @@
               }
           }
   
-          $("#drink").append("Drink Name: " + drinkReturn + "<br>");
+          $("#drink").append("<h5>" + drinkReturn + "</h5>");
   
           $("#drink").append(image);
   
-          $("#ingredient").text("Ingredients: ");
+          $("#ingredient").append("<h5>Ingredients: </h5>");
   
           for (var i = 0; i < ingredients.length; i++) {
               $("#ingredient").append(ingredients[i] + ", ");
           }
   
-          $("#ingredient").append("<br>" + "Instructions: " + drinkInstructions);
+          $("#ingredient").append("<br> <h5>Instructions:</h5> " + drinkInstructions);
   
         //   database.ref().push({
         //       name: drinkReturn,
@@ -96,17 +96,17 @@ search();
                   }
               }
   
-          $("#drink").append("Drink Name: " + ingredientReturn + "<br>");
+          $("#drink").append("<h5>" + ingredientReturn + "</h5>");
   
           $("#drink").append(imageTwo);
   
-          $("#ingredient").text("Ingredients: ");
+          $("#ingredient").append("<h5>Ingredients: </h5>");
   
           for (var i = 0; i < ingredientsTwo.length; i++) {
               $("#ingredient").append(ingredientsTwo[i] + ", ");
           }
   
-          $("#ingredient").append("<br>" + "Instructions: " + ingredientInstructions);
+          $("#ingredient").append("<br> <h5>Instructions: </h5>" + ingredientInstructions);
   
         //   database.ref().push({
         //       name: ingredientReturn,
@@ -114,7 +114,7 @@ search();
         //       ingredients: ingredientIngredients,
         //       instructions: ingredientInstructions
         //   });
-  
+
       
       function search1() {
     
