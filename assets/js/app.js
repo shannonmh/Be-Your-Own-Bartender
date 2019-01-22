@@ -41,11 +41,11 @@
               }
           }
   
-          $("#drink").append("<h5>" + drinkReturn + "</h5>");
+          $("#drink").append("<br> <h5>" + drinkReturn + "</h5>");
   
           $("#drink").append(image);
   
-          $("#ingredient").append("<h5>Ingredients: </h5>");
+          $("#ingredient").append("<br> <h5>Ingredients: </h5>");
   
           for (var i = 0; i < ingredients.length; i++) {
               $("#ingredient").append(ingredients[i] + ", ");
