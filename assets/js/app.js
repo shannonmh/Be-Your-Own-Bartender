@@ -96,11 +96,11 @@ search();
                   }
               }
   
-          $("#drink").append("<h5>" + ingredientReturn + "</h5>");
+          $("#drink").append("<br><h5>" + ingredientReturn + "</h5>");
   
           $("#drink").append(imageTwo);
   
-          $("#ingredient").append("<h5>Ingredients: </h5>");
+          $("#ingredient").append("<br><h5>Ingredients: </h5>");
   
           for (var i = 0; i < ingredientsTwo.length; i++) {
               $("#ingredient").append(ingredientsTwo[i] + ", ");
