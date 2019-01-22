@@ -114,7 +114,7 @@ search();
         //       ingredients: ingredientIngredients,
         //       instructions: ingredientInstructions
         //   });
-  
+
       
       function search1() {
     
