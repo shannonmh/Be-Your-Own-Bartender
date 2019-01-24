@@ -48,12 +48,15 @@
           $("#drink").append(image);
   
           $("#ingredient").append("<br> <h5>Ingredients: </h5>");
+
+          $("#recent-title").append("<h5>Recent Drinks</h5>");
   
           for (var i = 0; i < ingredients.length; i++) {
               $("#ingredient").append(ingredients[i] + ", ");
           }
   
           $("#ingredient").append("<br> <h5>Instructions:</h5> " + drinkInstructions);
+
   
           database.ref().push({
             name: drinkReturn,
@@ -77,6 +80,15 @@
                 $("h5").show();
                 $("#youtube").empty();
             }); 
+
+            $("#header-logo").on("click", function() {
+                $("#drink").empty();
+                $("#ingredient").empty();
+                $(".searchBox").show();
+                $("h5").show();
+                $("#youtube").empty();
+      
+              });
         });
     
     });
@@ -121,6 +133,8 @@
           $("#drink").append("<br><h5>" + ingredientReturn + "</h5>");
   
           $("#drink").append(imageTwo);
+
+          $("#recent-title").append("<h5>Recent Drinks</h5>");
   
           $("#ingredient").append("<br><h5>Ingredients: </h5>");
   
@@ -151,6 +165,15 @@
             $("#youtube").empty();
 
         });
+
+        $("#header-logo").on("click", function() {
+            $("#drink").empty();
+            $("#ingredient").empty();
+            $(".searchBox").show();
+            $("h5").show();
+            $("#youtube").empty();
+  
+          });
     });
       
       function search1() {
