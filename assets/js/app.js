@@ -1,23 +1,24 @@
   $(document).ready(function() {
 
-    // // Initialize Firebase
-    // var config = {
-    //   apiKey: "AIzaSyBh8at-MlvXDNVsDXyjSRu6Hl7423HYbe0",
-    //   authDomain: "bartender-4c74e.firebaseapp.com",
-    //   databaseURL: "https://bartender-4c74e.firebaseio.com",
-    //   projectId: "bartender-4c74e",
-    //   storageBucket: "",
-    //   messagingSenderId: "569675945586"
-    // };
-    // firebase.initializeApp(config);
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyBh8at-MlvXDNVsDXyjSRu6Hl7423HYbe0",
+      authDomain: "bartender-4c74e.firebaseapp.com",
+      databaseURL: "https://bartender-4c74e.firebaseio.com",
+      projectId: "bartender-4c74e",
+      storageBucket: "",
+      messagingSenderId: "569675945586"
+    };
+    firebase.initializeApp(config);
   
-    // var database = firebase.database();
+    var database = firebase.database();
   
   $("#name-button").on("click", function(event) {
       event.preventDefault();
         search();
       $(".searchBox").hide();
       $("h5").hide();
+      $("#youtube").show();
   
       var userDrink = $("#name-search").val();
       var queryDrinkURL = "https://www.thecocktaildb.com/api/json/v1/1/search.php?s=" + userDrink;
@@ -53,13 +54,30 @@
   
           $("#ingredient").append("<br> <h5>Instructions:</h5> " + drinkInstructions);
   
-        //   database.ref().push({
-        //       name: drinkReturn,
-        //       photo: image,
-        //       ingredients: ingredients,
-        //       instructions: drinkInstructions
-        //   });
-      });
+          database.ref().push({
+            name: drinkReturn,
+            photo: image,
+            ingredients: ingredients,
+            instructions: drinkInstructions
+        });
+
+        database.ref().limitToLast(1).on("child_added", function(snapShot) {
+            console.log(snapShot.val().name);
+            console.log(snapShot.val().ingredients);
+            console.log(snapShot.val().instructions);
+
+            $("#recent-drink-display-one").append(snapShot.val().name + ", ");
+
+            $("#home-button").on("click", function() {
+              $("#drink").empty();
+              $("#ingredient").empty();
+              $(".searchBox").show();
+              $("h5").show();
+              $("#youtube").empty();
+            }); 
+        });
+    
+    });
   });
   
   $("#ingredient-button").on("click", function(event) {
@@ -67,6 +85,7 @@
 search();
       $(".searchBox").hide();
       $("h5").hide();
+      $("#youtube").show();
   
       var userIngredient= $("#ingredient-search").val().trim();
       var queryIngredientURL = "https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=" + userIngredient;
@@ -106,15 +125,29 @@ search();
               $("#ingredient").append(ingredientsTwo[i] + ", ");
           }
   
-          $("#ingredient").append("<br> <h5>Instructions: </h5>" + ingredientInstructions);
-  
-        //   database.ref().push({
-        //       name: ingredientReturn,
-        //       photo: imageTwo,
-        //       ingredients: ingredientIngredients,
-        //       instructions: ingredientInstructions
-        //   });
+          database.ref().push({
+            name: ingredientReturn,
+            photo: imageTwo,
+            ingredients: ingredientIngredients,
+            instructions: ingredientInstructions
+        });
 
+        database.ref().limitToLast(1).on("child_added", function(snapShot) {
+          console.log(snapShot.val().name);
+          console.log(snapShot.val().ingredients);
+          console.log(snapShot.val().instructions);
+
+          $("#recent-drink-display-one").append(snapShot.val().name + ", ");
+
+        $("#home-button").on("click", function() {
+          $("#drink").empty();
+          $("#ingredient").empty();
+          $(".searchBox").show();
+          $("h5").show();
+          $("#youtube").empty();
+
+        });
+    });
       
       function search1() {
     
