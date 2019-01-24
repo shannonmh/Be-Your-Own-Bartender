@@ -1,5 +1,5 @@
   $(document).ready(function() {
-
+    $("#home").hide();
     // Initialize Firebase
     var config = {
       apiKey: "AIzaSyBh8at-MlvXDNVsDXyjSRu6Hl7423HYbe0",
@@ -14,7 +14,8 @@
     var database = firebase.database();
   
   $("#name-button").on("click", function(event) {
-      event.preventDefault();
+    $("#home").show();  
+    event.preventDefault();
         search();
       $(".searchBox").hide();
       $("h5").hide();
@@ -66,14 +67,15 @@
             console.log(snapShot.val().ingredients);
             console.log(snapShot.val().instructions);
 
-            $("#recent-drink-display-one").append(snapShot.val().name + ", ");
+            $("#recent-drink-display-two").append(snapShot.val().name + ", ");
 
             $("#home-button").on("click", function() {
-              $("#drink").empty();
-              $("#ingredient").empty();
-              $(".searchBox").show();
-              $("h5").show();
-              $("#youtube").empty();
+                $("#home").hide();
+                $("#drink").empty();
+                $("#ingredient").empty();
+                $(".searchBox").show();
+                $("h5").show();
+                $("#youtube").empty();
             }); 
         });
     
@@ -81,8 +83,9 @@
   });
   
   $("#ingredient-button").on("click", function(event) {
+      $("#home").show();
       event.preventDefault();
-search();
+      search();
       $(".searchBox").hide();
       $("h5").hide();
       $("#youtube").show();
@@ -137,14 +140,15 @@ search();
           console.log(snapShot.val().ingredients);
           console.log(snapShot.val().instructions);
 
-          $("#recent-drink-display-one").append(snapShot.val().name + ", ");
+          $("#recent-drink-display-two").append(snapShot.val().name + ", ");
 
         $("#home-button").on("click", function() {
-          $("#drink").empty();
-          $("#ingredient").empty();
-          $(".searchBox").show();
-          $("h5").show();
-          $("#youtube").empty();
+            $("#home").hide();
+            $("#drink").empty();
+            $("#ingredient").empty();
+            $(".searchBox").show();
+            $("h5").show();
+            $("#youtube").empty();
 
         });
     });
