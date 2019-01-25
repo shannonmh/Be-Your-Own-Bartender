@@ -81,7 +81,16 @@ h1{
 }
 
 #recent{
-    margin-top: 50px;
+    margin: 0 auto;
+    margin-bottom: 10px;
+}
+
+#recent-drink-display-two{
+    text-align: center;
+}
+
+#recent-header{
+    margin-top: 25px;
 }
 
 .nav-wrapper{
